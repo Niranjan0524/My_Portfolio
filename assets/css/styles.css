@@ -326,6 +326,13 @@ img {
 .work__img img:hover {
   transform: scale(1.1);
 }
+.work__img h3 {
+  margin-left: 20px;
+}
+
+.MyntraPic img{
+  height: 72%;
+}
 
 /* ===== CONTACT =====*/
 .contact__input {
