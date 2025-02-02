@@ -496,3 +496,15 @@ img {
     width: 450px;
   }
 }
+
+.home__buttons {
+    margin-bottom: 2rem;
+}
+
+.home__buttons .button {
+    margin-right: 1rem;
+}
+
+.home__buttons .button:last-child {
+    margin-right: 0;
+}
