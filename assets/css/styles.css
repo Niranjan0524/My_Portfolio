@@ -147,7 +147,9 @@ img {
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
+  margin: auto 20%;
 }
+
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
