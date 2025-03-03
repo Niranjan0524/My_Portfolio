@@ -1,5 +1,31 @@
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.cursor {
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 255, 255, 0.6);
+            border-radius: 50%;
+            position: fixed; /* Fixed position so it stays on screen */
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+            box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+            mix-blend-mode: difference;
+        }
+
+        .trail {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            position: fixed; /* Fixed position for smooth effect */
+            pointer-events: none;
+            transition: transform 0.2s ease-out;
+            box-shadow: 0 0 8px white;
+        }
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
@@ -183,9 +209,13 @@ img {
   position: relative;
   row-gap: 5rem;
   padding: 4rem 0 5rem;
+   margin: auto 20%;
 }
 .home__data {
   align-self: center;
+  /* text-align: center; */
+  align-items: center;
+ 
 }
 .home__title {
   font-size: var(--big-font-size);
@@ -326,13 +356,15 @@ img {
     width: 100%;
     background-color: #fff;
     border-radius: 1rem;
-    box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+    
     overflow: hidden;
     transition: 0.3s;
+    
 }
 
 .work__card:hover {
   transform: translateY(-8px);
+ box-shadow: 10px 10px 10px 10px rgba(246, 16, 16, 0.15);
 }
 
 .work__img {
@@ -372,13 +404,30 @@ img {
 }
 
 .tech__tag {
-  background-color: var(--first-color);
-  color: #fff;
+  background-color:greenyellow;
+  color: #181717;
   padding: 0.25rem 0.75rem;
   border-radius: 0.5rem;
   font-size: var(--smaller-font-size);
 }
 
+.tech__tag:hover{
+  transform: translate(0, -5px);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tech__tag1:hover{
+  transform: translate(0, -5px);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tech__tag1{
+  background-color: rgb(255, 52, 52);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: var(--smaller-font-size);
+}
 .work__links {
   display: flex;
   gap: 1rem;
@@ -488,6 +537,7 @@ img {
   }
   .contact__container {
     justify-items: center;
+    margin: auto 20%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -540,6 +590,7 @@ img {
     column-gap: 2rem;
     align-items: center;
     text-align: initial;
+    margin:auto 20%;
   }
   .work__container {
     grid-template-columns: repeat(2, 1fr);
