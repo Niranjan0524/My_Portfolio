@@ -82,3 +82,48 @@ sr.reveal(".home__img, .about__subtitle, .about__text, .skills__img", {
 });
 sr.reveal(".home__social-icon", { interval: 200 });
 sr.reveal(".skills__data, .work__img, .contact__input", { interval: 200 });
+
+// Function to scroll projects timeline
+function scrollProjects(direction) {
+  const timeline = document.getElementById('projects-timeline');
+  const scrollAmount = 450; // Width of one card plus gap
+  
+  if (direction === 'left') {
+    timeline.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  } else if (direction === 'right') {
+    timeline.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Auto-hide scroll indicators when not needed
+document.addEventListener('DOMContentLoaded', function() {
+  const timeline = document.getElementById('projects-timeline');
+  const leftIndicator = document.querySelector('.work__scroll-indicator--left');
+  const rightIndicator = document.querySelector('.work__scroll-indicator--right');
+  
+  // Ensure timeline starts at the beginning (first card fully visible)
+  timeline.scrollLeft = 0;
+  
+  function updateScrollIndicators() {
+    if (timeline.scrollLeft <= 10) { // Small threshold for better UX
+      leftIndicator.style.opacity = '0.3';
+    } else {
+      leftIndicator.style.opacity = '1';
+    }
+    
+    if (timeline.scrollLeft >= timeline.scrollWidth - timeline.clientWidth - 10) {
+      rightIndicator.style.opacity = '0.3';
+    } else {
+      rightIndicator.style.opacity = '1';
+    }
+  }
+  
+  timeline.addEventListener('scroll', updateScrollIndicators);
+  updateScrollIndicators(); // Initial call
+});
